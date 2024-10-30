@@ -1,6 +1,6 @@
 # Norecoin
 
-This app lets users view cryptocurrency prices in real-time using the CoinLore API. It fetches coin prices and displays them in a paginated table format. Each page shows ten (10) items to make it easy for users to see the data clearly.
+This project lets users view cryptocurrency prices in real-time using the CoinLore API. It fetches coin prices and displays them in a paginated table format. Each page shows ten (10) items to make it easy for users to see the data clearly.
 
 ## Features
 
@@ -36,8 +36,8 @@ This app lets users view cryptocurrency prices in real-time using the CoinLore A
 
 1. **Fetching Data**:
 
-   - The app uses the `/tickers` endpoint from the CoinLore API to fetch cryptocurrency data.
-   - No API key is required for this endpoint. The [CoinLore API Documentation](https://www.coinlore.com/cryptocurrency-data-api) has more information about rate limits and additional details.
+   - The app uses the `https://api.coinlore.net/tickers/` endpoint from the CoinLore API to fetch cryptocurrency data.
+   - It utilizes dynamic query params for the pagination `/tickers?start=0&limit=10`
 
 2. **Displaying Data**:
 
@@ -46,6 +46,7 @@ This app lets users view cryptocurrency prices in real-time using the CoinLore A
 
 3. **Navigating with Pagination**:
    - The pagination controls below the table allows you to switch between pages.
+   - There is an input that allows users to jump between pages
 
 ## Built With
 

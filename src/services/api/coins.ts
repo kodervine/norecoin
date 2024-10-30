@@ -7,11 +7,14 @@ export const coinsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   tagTypes: ['Coins'],
   endpoints: (builder) => ({
-    getTickers: builder.query<CoinsResponse, void>({
-      query: () => ENDPOINTS.TICKERS,
-      providesTags: ['Coins'],
-    }),
+    getCoins: builder.query<CoinsResponse, { start: number; pageSize: number }>(
+      {
+        query: ({ start = 1, pageSize = 10 }) =>
+          `${ENDPOINTS.TICKERS}/?start=${start}&limit=${pageSize}`,
+        providesTags: ['Coins'],
+      }
+    ),
   }),
 });
 
-export const { useGetTickersQuery } = coinsApi;
+export const { useGetCoinsQuery } = coinsApi;
