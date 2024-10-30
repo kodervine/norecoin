@@ -1,31 +1,35 @@
 import { useState } from 'react';
 import CustomPagination from '@/components/CustomPagination';
-import useCoinsData from '@/hooks/useCoins';
-import { useAppSelector } from '@/hooks/useReduxHook';
 import Loader from '@/components/Loader';
 import TableRow from '@/components/TableRow';
+import { useGetCoinsQuery } from '@/services/api/coins';
 
 const ITEMS_PER_PAGE = 10;
 const DashboardPage = () => {
   const [pageIndex, setPageIndex] = useState(1);
-  const { isDataLoading, errorMessage } = useCoinsData();
-  const { coinsData } = useAppSelector((state) => state.coins);
-  const totalPages = Math.ceil(coinsData.length / ITEMS_PER_PAGE);
+  const {
+    data: { data: coinsData, info } = {},
+    error,
+    isLoading,
+  } = useGetCoinsQuery({
+    start: (pageIndex - 1) * ITEMS_PER_PAGE,
+    pageSize: ITEMS_PER_PAGE,
+  });
 
-  const paginatedData = coinsData?.slice(
-    (pageIndex - 1) * ITEMS_PER_PAGE,
-    pageIndex * ITEMS_PER_PAGE
-  );
+  const totalCoins = info?.coins_num ?? 10000;
+  const totalPages = Math.ceil(totalCoins / ITEMS_PER_PAGE);
 
   const handlePageChange = (page: number) => setPageIndex(page);
   const headers = ['💰 Coin', '📄 Code', '🤑 Price', '📉 Total Supply'];
 
-  if (isDataLoading) {
+  if (isLoading) {
     return <Loader />;
   }
 
-  if (errorMessage) {
-    return <p className="text-center">{errorMessage}</p>;
+  if (error) {
+    return (
+      <p className="text-center">Something went wrong while fetching data</p>
+    );
   }
 
   return (
@@ -42,7 +46,7 @@ const DashboardPage = () => {
             </tr>
           </thead>
           <tbody>
-            {paginatedData.map((row, index) => {
+            {coinsData?.map((row, index) => {
               const rowClass = index % 2 === 0 ? 'bg-[#ebebeb]' : 'bg-white';
               return (
                 <tr

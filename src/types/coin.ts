@@ -1,5 +1,11 @@
+interface PageInfo {
+  coins_num: number;
+  time: number;
+}
+
 export interface CoinsResponse {
   data: ICoin[];
+  info: PageInfo;
 }
 
 export interface ICoin {
