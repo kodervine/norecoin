@@ -37,7 +37,7 @@ This project lets users view cryptocurrency prices in real-time using the CoinLo
 1. **Fetching Data**:
 
    - The app uses the `https://api.coinlore.net/tickers/` endpoint from the CoinLore API to fetch cryptocurrency data.
-   - It utilizes dynamic query params for the pagination `/tickers?start`
+   - It utilizes dynamic query params for the pagination `/tickers?start=0&limit=10`
 
 2. **Displaying Data**:
 
@@ -46,6 +46,7 @@ This project lets users view cryptocurrency prices in real-time using the CoinLo
 
 3. **Navigating with Pagination**:
    - The pagination controls below the table allows you to switch between pages.
+   - There is an input that allows users to jump between pages
 
 ## Built With
 
