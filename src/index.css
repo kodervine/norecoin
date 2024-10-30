@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  body {
+    @apply font-dmSans text-base duration-100;
+  }
+
+  main {
+    @apply py-4 px-[5vw] md:px-[7vw] lg:px-[10vw];
+  }
+
+  .navbar {
+    @apply z-10 sticky top-0 flex items-center gap-12 w-full px-[5vw] py-5 h-[80px] border-b bg-white;
+  }
+
+  tr {
+    @apply grid gap-1 grid-cols-2 lg:grid-cols-4 font-semibold;
+  }
+
+  .pagination-btn {
+    @apply font-semibold flex items-center gap-2 hover:border hover:border-yellow-300 p-1;
+  }
+}
