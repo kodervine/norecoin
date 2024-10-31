@@ -26,9 +26,9 @@ const TableRow = ({ row }: TableRowProps) => {
     <>
       {tableRow.map((item) => {
         return (
-          <td key={item.header} className="p-2">
+          <td key={item.header} className="p-2 sm:px-4">
             <p className="md:hidden font-bold">{item.header}</p>
-            <p>{item.value}</p>
+            <p className="break-all">{item.value}</p>
           </td>
         );
       })}

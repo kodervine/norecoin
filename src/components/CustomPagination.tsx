@@ -28,7 +28,7 @@ const CustomPagination = ({
 
   return (
     <section className="flex flex-col gap-4 px-5">
-      <section className="flex items-center justify-between gap-2 text-xs md:text-sm">
+      <section className="flex flex-wrap items-center justify-between gap-2 text-xs md:text-sm">
         <button
           className="pagination-btn"
           onClick={handlePrevious}

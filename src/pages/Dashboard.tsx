@@ -39,7 +39,10 @@ const DashboardPage = () => {
           <thead className="hidden md:inline-block w-full">
             <tr className="bg-white rounded-t-lg">
               {headers.map((header) => (
-                <th key={header} className="p-2 text-left whitespace-nowrap">
+                <th
+                  key={header}
+                  className="p-2 sm:px-4 text-left whitespace-nowrap"
+                >
                   {header}
                 </th>
               ))}
