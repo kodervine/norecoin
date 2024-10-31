@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CustomPagination from '@/components/CustomPagination';
 import Loader from '@/components/Loader';
 import TableRow from '@/components/TableRow';
-import { useGetCoinsQuery } from '@/services/api/coins';
+import { useGetCoinsQuery } from '@/api/coins';
 
 const ITEMS_PER_PAGE = 10;
 const DashboardPage = () => {

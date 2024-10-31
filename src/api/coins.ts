@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { BASE_URL, ENDPOINTS } from '@/services/api/endpoints';
+import { BASE_URL, ENDPOINTS } from '@/api/endpoints';
 import { CoinsResponse } from '@/types/coin';
 
 export const coinsApi = createApi({

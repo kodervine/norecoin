@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import coinsReducer from '@/redux/coinsSlice';
-import { coinsApi } from '@/services/api/coins';
+import { coinsApi } from '@/api/coins';
 
 export const store = configureStore({
   reducer: {
