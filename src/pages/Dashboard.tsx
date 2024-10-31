@@ -39,7 +39,7 @@ const DashboardPage = () => {
           <thead className="hidden md:inline-block w-full">
             <tr className="bg-white">
               {headers.map((header) => (
-                <th key={header} className="py-2 text-left">
+                <th key={header} className="p-2 text-left">
                   {header}
                 </th>
               ))}
@@ -50,7 +50,7 @@ const DashboardPage = () => {
               const rowClass = index % 2 === 0 ? 'bg-[#ebebeb]' : 'bg-white';
               return (
                 <tr
-                  className={`${rowClass} text-xs sm:text-sm p-2 md:p-1 text-left mb-1`}
+                  className={`${rowClass} text-xs sm:text-sm text-left`}
                   key={row.id}
                 >
                   <TableRow row={row} />

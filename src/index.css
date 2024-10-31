@@ -22,7 +22,7 @@
   }
 
   tr {
-    @apply grid gap-1 grid-cols-2 lg:grid-cols-4 font-semibold;
+    @apply grid gap-1 grid-cols-2 sm:grid-cols-4 font-semibold;
   }
 
   .pagination-btn {
