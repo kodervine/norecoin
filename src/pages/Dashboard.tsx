@@ -34,12 +34,15 @@ const DashboardPage = () => {
 
   return (
     <div className="flex justify-center w-full ">
-      <div className="shadow w-full lg:max-w-[50vw]">
-        <table className="w-full">
+      <div className="shadow w-full lg:max-w-[50vw] rounded-lg">
+        <table className="w-full ">
           <thead className="hidden md:inline-block w-full">
-            <tr className="bg-white">
+            <tr className="bg-white rounded-t-lg">
               {headers.map((header) => (
-                <th key={header} className="p-2 text-left">
+                <th
+                  key={header}
+                  className="p-2 sm:px-4 text-left whitespace-nowrap"
+                >
                   {header}
                 </th>
               ))}
