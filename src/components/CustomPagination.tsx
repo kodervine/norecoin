@@ -42,32 +42,29 @@ const CustomPagination = ({
             </>
           )}
         </button>
-        <div className="hidden sm:inline-block">
-          <div className="flex items-center gap-2">
-            <span className="flex items-center gap-1">
-              <div>Page</div>
-              <strong>
-                {pageIndex} of {pageCount}
-              </strong>
-            </span>
-            <span className="flex items-center gap-1">
-              Go to page:
-              <input
-                type="number"
-                defaultValue={pageIndex ?? 1}
-                onChange={(e) => {
-                  const page = Number(e.target.value);
-                  if (page > pageCount) {
-                    return;
-                  }
-                  onPageChange(page === 0 ? 1 : page);
-                }}
-                className="border p-1 rounded w-12 outline-none focus:border-[#FC804A]"
-              />
-            </span>
-          </div>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-2">
+          <span className="flex items-center gap-1">
+            <div>Page</div>
+            <strong>
+              {pageIndex} of {pageCount}
+            </strong>
+          </span>
+          <span className="flex items-center gap-1">
+            Go to page:
+            <input
+              type="number"
+              defaultValue={pageIndex ?? 1}
+              onChange={(e) => {
+                const page = Number(e.target.value);
+                if (page > pageCount) {
+                  return;
+                }
+                onPageChange(page === 0 ? 1 : page);
+              }}
+              className="border p-1 rounded w-12 outline-none focus:border-[#FC804A]"
+            />
+          </span>
         </div>
-
         <button
           className="pagination-btn"
           onClick={handleNext}
